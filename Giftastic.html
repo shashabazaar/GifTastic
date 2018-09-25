@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Most Expensive Cars Search</title>
+  <style type="text/css">
+    button,
+    div,
+    form,
+    input {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+     <!-- Rendered Buttons will get Dumped Here  -->
+     
+    <div id="buttons-view"></div>
+    <button id="hennessey-venom-gt">Hennessey Venom GT</button>
+    <button id="zenzo-st--1">Zenzo ST-1</button>
+    <button id="laferrari">Laferrari</button>
+    <button id="pagani-zonda-cinque-roadster">Pagani Zonda Cinque Roadster</button>
+    <button id="aston-martin-one--77">Aston Martin One-77</button>
+    <button id="koenigsegg-one-1">Koenigsegg One:1</button>
+    <button id="ferrari-sergio">Ferrari Sergio</button>
+    <button id="bugatti-veyron-mansory-vivere">Bugatti Veyron: Mansory Vivere</button>
+    <button id="lykan-hypersport">Lykan Hypersport</button>
+    <button id="lamborghini-veneno-roadster">Lamborghini Veneno Roadster</button>
+
+    <div id="gifs-appear-here">
+    </div>
+
+    <form id="giphy-form">
+      <label for="giphy-input">Add a Car!</label>
+      <input type="text" id="giphy-input"><br>
+
+      <!-- Button triggers new gif to be added -->
+      <input id="add-giphy" type="submit" value="Submit">
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $("button").on("click", function() {
+      var hennesseyVenomGt = $(this).attr("id");
+      // Initial array of gifs
+      var topics = ["Hennessey Venom GT", "Zenvo ST-1", "Laferrari", "Pagani Zonda Cinque Roadster", "Aston Martin One-77", "Koenigsegg One:1", "Ferrari Sergio", "Bugatti Veyron: Mansory Vivere", "Lykan Hypersport", "Lamborghini Veneno Roadster"];
+
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        hennessey-venom-gt + "&api_key=wqqeEJjdKX1EW0o6UepGOvlhgeBORHfo";
+
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+      .then(function(response) {
+      
+        var results = response.data;
+
+        for (var i = 0; i < results.length; i++) {
+
+          if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+
+            var gifDiv = $("<div>");
+          }
+        }
+})
