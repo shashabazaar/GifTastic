@@ -4,17 +4,56 @@
 <head>
   <meta charset="utf-8">
   <title>Most Expensive Cars Search</title>
+  
+  
   <style type="text/css">
+  
+  /* #backgroundImage  {
+    background-image: ur('https://i.ytimg.com/vi/1pwiDeKWL1g/maxresdefault.jpg');
+   background-attachment: fixed;)
+  } */
+  body {
+
+   background: url('https://i.ytimg.com/vi/1pwiDeKWL1g/maxresdefault.jpg');
+   background-attachment: fixed;
+   background-size:cover;
+   }
+   
+   
     button,
     div,
     form,
     input {
       margin: 10px;
-    }
+    };
+  
+    
   </style>
 </head>
 
 <body>
+  <div class='my-container'>
+
+  </div>
+  <div class='container'>
+    <div class='row'>
+      <div id='carButtons'>
+      </div>
+    </div>
+    <div class ='row'>
+      <div class='col-lg-9'>
+        <div class='display'>
+        </div>
+        <div class='col=lg-3'>
+          <form id='giphy-form'>
+            <label for='newCarInput'><strong>Add Your Favorite Car!</strong></label>
+            <input type='text' id='newCarInput'>
+            <br>
+            <input id='addCar' type='submit' value='Submit'>
+          </form>
+        </div>
+      </div>
+    </div>
 
   <!-- Rendered Buttons will get Dumped Here  -->
 
@@ -29,15 +68,7 @@
   <button data-car="bugatti-veyron-mansory-vivere">Bugatti Veyron: Mansory Vivere</button>
   <button data-car="lykan-hypersport">Lykan Hypersport</button>
   <button data-car="lamborghini-veneno-roadster">Lamborghini Veneno Roadster</button>
-  <!-- FIX -->
-  <form id="giphy-form">
-    <label for="giphy-input">Add a Car!</label>
-    <input type="text" id="giphy-input"><br>
-
-    <!-- Button triggers new gif to be added -->
-    <input id="add-giphy" type="submit" value="Most Exotic Car Search">
-  </form>
-
+   
 
   <div id="gifs-appear-here">
   </div>
@@ -45,6 +76,7 @@
   <script type="text/javascript">
     $("button").on("click", function () {
       var topics = $(this).attr("data-car");
+      
 
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         topics + "&api_key=dc6zaTOxFJmzC&limit=10";
